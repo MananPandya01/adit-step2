@@ -1,20 +1,24 @@
 # Workly — continuation roadmap (from uploaded continuation prompt)
 
-## Blocker: source code not yet available
-- The GitHub repo `maddypandya44-a11y/adit-step1` is private (clone/API return 404) and this Lovable project is still a fresh TanStack Start template.
-- Waiting on the user to either: (a) download the repo ZIP from GitHub and attach it in chat, or (b) make the repo public temporarily, or (c) re-import via "Import from GitHub".
-- Do not start building until the source arrives — the prompt forbids starting from scratch.
+Source (adit-step1 repo) is now ported into this project; Lovable Cloud connected.
 
-## Once source arrives
-- [ ] STEP 0 audit (routes, components, backend, secrets, mocked vs real) — report in ~10 lines
-- [ ] Fix known bugs: toasts never appear (mount Sonner), tab title "Lovable App" → real title + meta/OG/favicon, end-to-end flow test
-- [ ] Backend: Lovable Cloud tables w/ owner-only RLS: profiles, resumes, resume_versions, watched_companies, jobs, job_scores, applications, follow_ups, alerts, integrations
-- [ ] Resume-Matcher port (TypeScript): parsing, keywords, match 0–100, rewrite suggestions, improve → resume_version; credit in README
-- [ ] JobRadar port: Greenhouse/Lever/Ashby fetchers, stable job IDs, closed postings, LLM score w/ rules, daily token budget, scheduled digest email + in-app alerts
+## Done
+- [x] STEP 0 audit (see chat report)
+- [x] Port full app source, schema (resumes, watched_companies, jobs, applications w/ RLS + GRANTs), tests, assets
+- [x] Enable Lovable Cloud + email auth + Google sign-in
+- [x] Fix: toasts never appear → Sonner mounted in __root.tsx
+- [x] Fix: tab title "Lovable App" → "Workly — Your job search, on autopilot" + real meta/OG/favicon
+- [x] Paywall audit: clean (only "Stripe" the company name matches)
+- [x] README credits (Resume-Matcher: srbhr/Resume-Matcher)
+
+## Remaining phases
+- [ ] E2E flow verification (signup → confirm → sign in → dashboard → radar scan → jobs → resume match → applications)
+- [ ] Resume-Matcher port phase 2: parsing improvements, rewrite suggestions, "improve" → resume_version table
+- [ ] JobRadar phase 2: LLM scoring with rules + local fallback, daily token budget, scheduled digest email + in-app alerts (alerts table, cron)
+- [ ] New tables for later phases: profiles, resume_versions, job_scores, follow_ups, alerts, integrations (owner-only RLS + GRANTs each)
 - [ ] AI tailoring + apply packages (PDF/DOCX export, confirmation before submit)
 - [ ] Follow-ups (Gmail OAuth w/ approval + caps), integrations page
-- [ ] Polish + tests + README credits
-- [ ] Paywall audit: no upgrade/pricing/premium/pro/waitlist/stripe/checkout/subscribe/paywall/locked anywhere
+- [ ] Polish + tests
 
 ## Hard rules
 - NO paywall of any kind; every user gets everything instantly. Only invisible generous rate limits ("try again later" + reset time).
