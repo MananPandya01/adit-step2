@@ -15,7 +15,7 @@ npm run dev
 
 ## Credits
 
-- Keyword matching inspired by [Resume-Matcher](https://github.com/C UBAN-XYZ/Resume-Matcher) — the local matcher in `src/lib/match.ts` is our TypeScript adaptation of its keyword-extraction idea.
+- Keyword matching inspired by [Resume-Matcher](https://github.com/srbhr/Resume-Matcher) — the local matcher in `src/lib/match.ts` is our TypeScript adaptation of its keyword-extraction idea.
 - Built with [Lovable](https://lovable.dev).
 
 <!-- LOVABLE:BEGIN -->
