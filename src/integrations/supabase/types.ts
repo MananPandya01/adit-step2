@@ -14,7 +14,153 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      applications: {
+        Row: {
+          company: string
+          created_at: string
+          id: string
+          notes: string
+          status: string
+          title: string
+          updated_at: string
+          url: string | null
+          user_id: string
+        }
+        Insert: {
+          company: string
+          created_at?: string
+          id?: string
+          notes?: string
+          status?: string
+          title: string
+          updated_at?: string
+          url?: string | null
+          user_id?: string
+        }
+        Update: {
+          company?: string
+          created_at?: string
+          id?: string
+          notes?: string
+          status?: string
+          title?: string
+          updated_at?: string
+          url?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      jobs: {
+        Row: {
+          ats: string
+          company: string
+          description: string | null
+          external_id: string
+          first_seen_at: string
+          id: string
+          last_seen_at: string
+          location: string | null
+          match_score: number | null
+          matched_keywords: string[]
+          missing_keywords: string[]
+          status: string
+          title: string
+          url: string | null
+          user_id: string
+        }
+        Insert: {
+          ats: string
+          company: string
+          description?: string | null
+          external_id: string
+          first_seen_at?: string
+          id?: string
+          last_seen_at?: string
+          location?: string | null
+          match_score?: number | null
+          matched_keywords?: string[]
+          missing_keywords?: string[]
+          status?: string
+          title: string
+          url?: string | null
+          user_id?: string
+        }
+        Update: {
+          ats?: string
+          company?: string
+          description?: string | null
+          external_id?: string
+          first_seen_at?: string
+          id?: string
+          last_seen_at?: string
+          location?: string | null
+          match_score?: number | null
+          matched_keywords?: string[]
+          missing_keywords?: string[]
+          status?: string
+          title?: string
+          url?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      resumes: {
+        Row: {
+          content: string
+          created_at: string
+          id: string
+          is_active: boolean
+          title: string
+          user_id: string
+        }
+        Insert: {
+          content?: string
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          title?: string
+          user_id?: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          title?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      watched_companies: {
+        Row: {
+          ats: string
+          created_at: string
+          id: string
+          last_scanned_at: string | null
+          name: string
+          slug: string
+          user_id: string
+        }
+        Insert: {
+          ats: string
+          created_at?: string
+          id?: string
+          last_scanned_at?: string | null
+          name: string
+          slug: string
+          user_id?: string
+        }
+        Update: {
+          ats?: string
+          created_at?: string
+          id?: string
+          last_scanned_at?: string | null
+          name?: string
+          slug?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
